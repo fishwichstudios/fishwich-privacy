@@ -61,7 +61,7 @@
   <p class="meta">
     Application: <strong>Fishwich</strong><br>
     Developer: <strong>Fishwich Studios</strong><br>
-    Last updated: <strong>29 June 2026</strong>
+    Last updated: <strong>07 July 2026</strong>
   </p>
 
   <p>This Privacy Policy explains how Fishwich Studios ("we", "us", "our") handles information in connection with the Fishwich mobile application ("the App") available on Google Play. We are committed to protecting your privacy and being transparent about our data practices.</p>
@@ -109,11 +109,15 @@
 
   <p>The App requests the following device permissions:</p>
   <ul>
+    <li><strong>Call Screening role (ROLE_CALL_SCREENING)</strong> — the App requests to be set as the device's call screening service. This allows the App to detect an incoming call in the brief window before the phone begins ringing, so that the spoken announcement can be delivered cleanly before or alongside the ring. This is the same category of role used by other caller ID and call management apps, and does not grant the App the ability to block, silence, or otherwise interfere with your calls beyond triggering the announcement.</li>
     <li><strong>READ_CONTACTS</strong> — required to read the incoming caller's contact name for announcement purposes. This is core to the App's primary function and cannot be achieved without this permission. Access is temporary, occurring only at the moment of an incoming call.</li>
-    <li><strong>READ_CALL_LOG / PHONE_STATE</strong> — required to detect incoming calls and trigger the announcement.</li>
+    <li><strong>READ_PHONE_STATE</strong> — required to detect call state changes so the App knows when a call is incoming.</li>
+    <li><strong>POST_NOTIFICATIONS</strong> — required to show the App's persistent status notification (indicating whether Fishwich is active or sleeping) and other in-app notifications, such as the optional sleeping-mode reminder.</li>
+    <li><strong>FOREGROUND_SERVICE and FOREGROUND_SERVICE_PHONE_CALL</strong> — required so the App can run its call-detection service reliably in the background without being closed by the Android operating system, and so that this background operation is clearly disclosed to you via a persistent notification.</li>
+    <li><strong>RECEIVE_BOOT_COMPLETED</strong> — required so the App's call detection service restarts automatically after your device is switched off and on again, without you needing to manually reopen the App.</li>
   </ul>
 
-  <p>You may revoke these permissions at any time through your device's Settings. If you revoke the READ_CONTACTS permission, the App will not be able to match caller names and will announce calls using a generic announcement.</p>
+  <p>You may revoke these permissions at any time through your device's Settings. If you revoke the READ_CONTACTS permission, the App will not be able to match caller names and will announce calls using a generic announcement. If you revoke the call screening role or phone state permission, the App will not be able to detect incoming calls and no announcements will be made.</p>
 
   <h2>7. Data Storage and Security</h2>
 
